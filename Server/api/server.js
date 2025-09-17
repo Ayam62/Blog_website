@@ -1,12 +1,12 @@
 
 import dotenv from "dotenv"
 import express from "express"
-import uploadRouter from "./routes/userRoutes/uploadImageRoutes.js";
-import connectDB from "./configs/db.js";
-import postRouter from "./routes/userRoutes/postRoutes.js";
-import authRouter from "./routes/authRoutes/authRouter.js";
-import userRouter from "./routes/userRoutes/userRoute.js";
-import publicPostsRouter from "./routes/publicRoutes/publicPostRouter.js"
+import uploadRouter from "../routes/userRoutes/uploadImageRoutes.js";
+import connectDB from "../configs/db.js";
+import postRouter from "../routes/userRoutes/postRoutes.js";
+import authRouter from "../routes/authRoutes/authRouter.js";
+import userRouter from "../routes/userRoutes/userRoute.js";
+import publicPostsRouter from "../routes/publicRoutes/publicPostRouter.js"
 import cors from "cors"
 
 dotenv.config();
