@@ -117,7 +117,7 @@ export const fetchMyPosts = async () => {
     }
 
     // The backend will extract user ID from the JWT token
-    const response = await api.get('http://localhost:5001/api/posts');
+    const response = await api.get('https://blog-website-1-canh.onrender.com');
     console.log(response)
     
     console.log('Backend response:', response.data);
