@@ -2,7 +2,7 @@
 import axios from 'axios';
 
  const api = axios.create({
-  baseURL: 'http://localhost:5001/api', 
+  baseURL: 'https://blog-website-1-canh.onrender.com/api', 
   timeout: 10000,
 });
 
@@ -21,7 +21,7 @@ export const fetchPosts = async () => {
 
 export const registerUser = async (userData) => {
   try {
-    const res = await axios.post('http://localhost:5001/api/auth/register', userData, {
+    const res = await axios.post('https://blog-website-1-canh.onrender.com/api/auth/register', userData, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -34,7 +34,7 @@ export const registerUser = async (userData) => {
 };
 export const login = async (credentials) => {
   try {
-    const response = await api.post('http://localhost:5001/api/auth/login', credentials);
+    const response = await api.post('https://blog-website-1-canh.onrender.com/api/auth/login', credentials);
     return response;
   } catch (error) {
     throw error;
@@ -42,7 +42,7 @@ export const login = async (credentials) => {
 };
 export const resetPassword = async (userId, token, data) => {
   try {
-    const response = await api.post(`http://localhost:5001/api/auth/reset-password/${userId}/${token}`, data);
+    const response = await api.post(`https://blog-website-1-canh.onrender.com/api/auth/reset-password/${userId}/${token}`, data);
     return response.data;
   } catch (error) {
     throw error;
@@ -53,7 +53,7 @@ export const uploadImage = async (file) => {
   const formData = new FormData();
   formData.append('image', file);
   try {
-    const response = await api.post('http://localhost:5001/api/uploads/upload', formData, {
+    const response = await api.post('https://blog-website-1-canh.onrender.com/api/uploads/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -77,7 +77,7 @@ export const createPost = async (postData) => {
     };
     console.log(payload)
 
-    const response = await api.post('http://localhost:5001/api/posts/post', payload);
+    const response = await api.post('https://blog-website-1-canh.onrender.com/api/posts/post', payload);
     return response.data;
   } catch (error) {
     throw error;
@@ -117,7 +117,7 @@ export const fetchMyPosts = async () => {
     }
 
     // The backend will extract user ID from the JWT token
-    const response = await api.get('https://blog-website-1-canh.onrender.com');
+    const response = await api.get('https://blog-website-1-canh.onrender.com/api/posts');
     console.log(response)
     
     console.log('Backend response:', response.data);
