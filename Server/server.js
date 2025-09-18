@@ -18,7 +18,7 @@ const PORT= process.env.PORT || 8000
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cors({
-  origin: 'http://localhost:5173', // Your React app's URL
+  origin: 'https://blog-website-1h59.vercel.app/', // Your React app's URL
   credentials: true
 }));
 
